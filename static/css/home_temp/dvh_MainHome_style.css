@@ -1,0 +1,261 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #1e1e1e; /* Fallback por si el video no carga */
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay oscuro semitransparente */
+    z-index: -1;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* * Estilos para el Navbar*/
+
+.custom-navbar {
+    background-color: #1e1e1e;
+}
+
+.nav-link {
+font-family: Arial, Helvetica, sans-serif;
+color: #f2f2f2;
+}
+
+.nav-link:hover{
+font-family: Arial, Helvetica, sans-serif;
+color: #f2f2f2;
+text-decoration: underline;
+}
+
+
+/* Estilo para el botón hamburguesa */
+.navbar-toggler {
+    border-color: #f2f2f2; 
+}
+
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler-icon {
+    color: #f2f2f2;
+}
+
+
+
+.h2 .h3 .h4 .h5 .h6 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-content-container {
+    background-color: #f2f2f2;    
+}
+
+.card-heading-container {
+    
+    width: 100%;
+    padding-left: 1rem;
+    background-color: #f2f2f2;
+}
+
+.card {
+    background-color:#f2f2f2;
+    border: 1px solid #ddd; 
+}
+
+.card-heading-container h3 {
+    color: #1e1e1e; 
+    font-weight: bold; 
+}
+
+
+.chat-container-wrapper {
+    max-width: none;
+}
+
+h2 {
+color: #1e1e1e;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/*Inicio Botones*/
+.custom-btn {
+  background: #32a470 !important;
+  color: #ffffff !important;
+  border: 1px solid #32a470;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.custom-btn:hover {
+  background: #ffffff !important;
+  color: #32a470 !important;
+  border: 1px solid #32a470;
+  transform: translateY(-2px);
+}
+
+/*Fin botones*/
+
+/* Estilo para los iconos de check */
+.custom-icon-color {
+    color: #32a470;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+
+.ai-container {
+    max-height: 400px !important;
+    overflow-y: auto;
+    border-radius: 0.5rem;
+    border: 1px solid #dee2e6;
+    padding: 1rem;
+    background-color: #f8f9fa;
+}
+
+.user-message {
+    text-align: right;
+    color: #fff;
+    background-color: #1e1e1e;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 80%; 
+    margin-left: auto; 
+}
+
+.ai-message {
+    text-align: left;
+    color: #1e1e1e;
+    background-color: #e9ecef;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 80%; 
+    margin-right: auto; 
+}
+
+
+/* Estilos para el Footer */
+
+/* Estilos para el footer de pantalla extendida */
+.custom-navbar a {
+    color: #f2f2f2; 
+    font-size: 16px;
+    text-decoration: none; 
+}
+
+.custom-navbar a:hover {
+    color: #f2f2f2; 
+    text-decoration: underline;
+}
+
+/* Estilos para el footer responsivo */
+.responsive-footer {
+    background-color: #1e1e1e !important;
+    padding: 10px 0;
+}
+
+.responsive-footer i, .responsive-footer .footer-icon-svg {
+    color: #f2f2f2;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    height: 1.5rem;
+}
+
+.responsive-footer .footer-icon-svg {
+    fill: #f2f2f2;
+    width: 1.5rem;
+}
+
+/* Estilo del footer responsivo */
+.responsive-footer a {
+    text-decoration: none; 
+    color: #f2f2f2; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* ... el resto de tus estilos ... */
+
+.responsive-footer small {
+    color: #f2f2f2;
+    font-size: 0.75rem;
+}
+
+.responsive-footer a:hover {
+    color: #f2f2f2 !important;
+}
+
+.responsive-footer a:hover i, .responsive-footer a:hover .footer-icon-svg {
+    color: #f2f2f2!important;
+    fill: #f2f2f2 !important;
+}
+
+/* Estilos específicos para los logos del footer en home_temp.html */
+.footer-small-logo {
+    max-width: 120px !important;
+    height: auto;
+}
+
+.footer-corfo-logo {
+    max-width: 100px !important;
+}
+
+.custom-col-spacing {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+/* Estilos para el autocompletado */
+.autocomplete-container {
+    position: relative;
+}
+
+.autocomplete-results {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+.autocomplete-results div {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-results div:hover {
+    background-color: #e9e9e9;
+}

@@ -1,0 +1,268 @@
+/* Estilo para la imagen de fondo */
+.fondo-imagen {
+  /* Reemplaza 'ruta/a/tu/imagen.jpg' con la dirección de tu imagen */
+  background-image: url('dvh_RegistroPiloto_images/Gemini_Generated_Image_te2ti3te2ti3te2t.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  min-height: 100vh;
+}
+
+/* Opcional: para que el texto sea legible sobre la imagen */
+.texto-blanco {
+  color: white;
+}
+
+
+/* * Estilos para el Navbar*/
+
+.custom-navbar {
+    background-color: #1e1e1e;
+    
+}
+
+.nav-link {
+font-family: Arial, Helvetica, sans-serif;
+color: #f2f2f2;
+}
+
+.nav-link:hover{
+font-family: Arial, Helvetica, sans-serif;
+color: #f2f2f2;
+text-decoration: underline;
+}
+
+
+/* Estilo para el botón hamburguesa */
+.navbar-toggler {
+    border-color: #f2f2f2; 
+}
+
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler-icon {
+    color: #f2f2f2;
+}
+
+
+
+
+/* Estilo para el contenedor de la tarjeta */
+.card {
+  background-color: #f2f2f2;
+  border-radius: 15px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Estilo para el título principal de la tarjeta */
+.card-title {
+  color: #1e1e1e; 
+  font-family:Arial, Helvetica, sans-serif; 
+  font-size: 2rem; 
+  font-weight: bold;
+  /*border-bottom: 2px solid #007bff;  Una línea azul debajo del título */
+  padding-bottom: 10px 10px;
+  margin-bottom: 20px;
+}
+
+
+
+.card-body h4 {
+  color: #1e1e1e; 
+  font-family: 'Arial', sans-serif; 
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+/* Estilo para los textareas y selects */
+.form-control, .form-select {
+  border-radius: 8px; 
+  border: 1px solid #f2f2f2;
+  font-family: 'Helvetica', sans-serif;
+  color: #495057;
+
+
+}
+
+.form-control{
+     height: 15px;
+
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25); 
+}
+
+
+
+#upload-btn {
+  color: #f2f2f2;            
+  border-color: none;     
+  background-color: #1e1e1e; 
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 8px;        
+  transition: all 0.3s ease; 
+}
+
+/* Estilo al pasar el cursor sobre el botón (efecto "hover") */
+#upload-btn:hover {
+   color: #1e1e1e;            
+  border-color: #1e1e1e;     
+  background-color: #f2f2f2; 
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 8px;        
+  transition: all 0.3s ease; 
+}
+
+/* Estilo al hacer clic en el botón */
+#upload-btn:active {
+  background-color: #1c1c1c; 
+  border-color: none;
+  transform: translateY(1px); 
+}
+
+
+.btn-primary {
+ background-color: #1e1e1e;
+  border-color: none;
+  color: #f2f2f2 ;
+  border-radius: 8px;
+}
+
+.btn-primary:hover {
+  background-color: #f2f2f2;
+  border-color: #1e1e1e;
+  color: #1e1e1e ;
+  border-radius: 8px;
+}
+
+.btn-success {
+  background-color: #1e1e1e; 
+  border-color: none;
+  color: #f2f2f2 ;
+  border-radius: 8px;
+}
+
+.btn-success:hover:not(.disabled) {
+  background-color: #f2f2f2;
+  border-color: #1e1e1e;
+  color: #1e1e1e ;
+  border-radius: 8px;
+}
+
+/* Estilo para los checkboxes */
+.form-check-input:checked {
+  background-color: #1c1c1c;
+  border-color: none;
+}
+
+
+
+#finalButton {
+  background-color: #1e1e1e; 
+  border-color: none;    
+  color: #f2f2f2;           
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;          
+  font-weight: normal;        
+  padding: 12px 24px;       
+  border-radius: 50px;     
+  transition: all 0.3s ease;
+}
+
+#finalButton:hover:not(:disabled) {
+ background-color: #f2f2f2; 
+  border-color: #1e1e1e;    
+  color: #1e1e1e;           
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;          
+  font-weight: normal;        
+  padding: 12px 24px;       
+  border-radius: 50px;     
+  transition: all 0.3s ease;
+}
+
+#finalButton:disabled {
+  background-color: #e9ecef; 
+  border-color: #e9ecef;
+  color: #6c757d;           
+  cursor: not-allowed;     
+  opacity: 0.65;            
+  box-shadow: none;        
+}
+
+
+
+
+.card img {
+  object-fit: cover; 
+  height: 100%;
+}
+
+
+/* Estilos para el Footer */
+
+/* Estilos para el footer de pantalla extendida */
+.custom-navbar a {
+    color: #f2f2f2; 
+    font-size: 16px;
+    text-decoration: none; 
+}
+
+.custom-navbar a:hover {
+    color: #f2f2f2; 
+    text-decoration: underline;
+}
+
+/* Estilos para el footer responsivo */
+.responsive-footer {
+    background-color: #1e1e1e !important;
+    padding: 10px 0;
+}
+
+.responsive-footer i, .responsive-footer .footer-icon-svg {
+    color: #f2f2f2;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    height: 1.5rem;
+}
+
+.responsive-footer .footer-icon-svg {
+    fill: #f2f2f2;
+    width: 1.5rem;
+}
+
+/* Estilo del footer responsivo */
+.responsive-footer a {
+    text-decoration: none; 
+    color: #f2f2f2; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* ... el resto de tus estilos ... */
+
+.responsive-footer small {
+    color: #f2f2f2;
+    font-size: 0.75rem;
+}
+
+.responsive-footer a:hover {
+    color: #f2f2f2 !important;
+}
+
+.responsive-footer a:hover i, .responsive-footer a:hover .footer-icon-svg {
+    color: #f2f2f2!important;
+    fill: #f2f2f2 !important;
+}

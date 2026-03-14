@@ -1,0 +1,511 @@
+/* --- General Link Styles --- */
+a {
+    color: #32a470;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #6c757d; /* Darker gray for hover */
+    text-decoration: underline;
+}
+
+/* --- Footer Link Styles --- */
+.footer-link {
+    color: #f2f2f2;
+    position: relative;
+    text-decoration: none !important;
+    padding-bottom: 5px;
+    display: inline-block; /* Ensures the underline effect works correctly */
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #a7e9af;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+
+.footer-link:hover::after {
+    transform: scaleX(1);
+}
+
+.footer-link.active {
+    color: #a7e9af !important;
+}
+
+/* Mobile footer icons and text color */
+.responsive-footer .footer-link,
+.responsive-footer .footer-link i,
+.responsive-footer .footer-link small {
+    color: #f2f2f2 !important;
+}
+
+.responsive-footer .footer-link.active,
+.responsive-footer .footer-link.active i,
+.responsive-footer .footer-link.active small {
+    color: #a7e9af !important;
+}
+
+/* --- Mapa Pilotos Styles --- */
+.map-container-wrapper {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#map {
+    flex-grow: 1; /* El mapa llena el espacio restante */
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* 
+ * Estilos para la InfoWindow de Google Maps para que coincida con el tema oscuro.
+ * Se utilizan selectores específicos de Google Maps (gm-style) para sobreescribir los estilos por defecto.
+ */
+.gm-style .gm-style-iw-c { /* Contenedor principal de la InfoWindow */
+    background-color: rgba(34, 34, 34, 0.9) !important;
+    border-radius: 15px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 15px !important;
+}
+
+.gm-style .gm-style-iw-d { /* Div del contenido */
+    overflow: hidden !important;
+    color: #f2f2f2 !important;
+}
+
+.gm-style .gm-style-iw-t::after { /* "Cola" o puntero de la InfoWindow */
+     background: rgba(34, 34, 34, 0.9) !important;
+}
+
+.info-window-content {
+    color: #f2f2f2;
+}
+
+.info-window-content h5 {
+    color: #a7e9af; /* Color de acento del sitio */
+    margin-bottom: 10px;
+}
+
+.info-window-content img {
+    max-width: 120px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info-window-content p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.info-window-content a {
+    color: #a7e9af;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.info-window-content a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el botón de cierre del InfoWindow */
+.gm-style .gm-style-iw-c .gm-ui-hover-effect {
+    background-color: #a7e9af !important;
+    border-radius: 50% !important;
+}
+
+.gm-style .gm-style-iw-c .gm-ui-hover-effect:hover {
+    background-color: #8fd99b !important;
+}
+
+.gm-style .gm-style-iw-c .gm-ui-hover-effect span {
+    color: #1e1e1e !important;
+    font-weight: bold !important;
+}
+
+/* --- INICIO DE ESTILOS CONSOLIDADOS DE home_new.css --- */
+
+/* --- Estilos Globales y de Fondo --- */
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #1e1e1e; /* Fallback */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.fondo-imagen {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  min-height: 100vh;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* --- Navbar --- */
+.custom-navbar {
+    background-color: #1e1e1e;
+    padding: 1rem 0; /* Increased padding for more height */
+}
+
+.custom-navbar .navbar-nav {
+    align-items: center; /* Vertically center nav items */
+}
+
+.nav-link {
+    font-family: 'Nunito', sans-serif;
+    color: #f2f2f2;
+    position: relative;
+    text-decoration: none !important; /* Ensure no default underline */
+    padding-bottom: 5px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px; /* Corrected height */
+    bottom: 0;
+    left: 0;
+    background-color: #a7e9af;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-link:hover {
+    color: #f2f2f2;
+}
+
+.nav-link:visited {
+    color: #f2f2f2; /* Revert visited links to the default color */
+}
+
+.nav-link.active {
+    color: #a7e9af !important; /* Light green for the active page link */
+}
+
+.navbar-toggler {
+    border-color: #f2f2f2;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* --- Contenido Principal y Tarjetas --- */
+.main-content-container {
+    background-color: #f2f2f2;
+}
+
+.card {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-body h5 {
+    font-size: 1rem;
+}
+
+.card-body h6 {
+    font-size: 0.9rem;
+}
+
+.card-heading-container h3 {
+    color: #1e1e1e;
+    font-weight: bold;
+}
+
+/* --- Botones y Elementos de Formulario --- */
+.custom-btn {
+  background: #32a470 !important;
+  color: #ffffff !important;
+  border: 1px solid #32a470;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.custom-btn:hover {
+  background: #ffffff !important;
+  color: #32a470 !important;
+  border: 1px solid #32a470;
+  transform: translateY(-2px);
+}
+
+.custom-icon-color {
+    color: #32a470;
+}
+
+.form-control, .form-select {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* --- Chat de IA --- */
+.main-content-container > .mb-3 > h4 {
+    font-size: 1rem;
+}
+
+.ai-container {
+    max-height: 400px !important;
+    overflow-y: auto;
+    border-radius: 0.5rem;
+    border: 1px solid #dee2e6;
+    padding: 1rem;
+    background-color: #f8f9fa;
+}
+
+.user-message {
+    text-align: right;
+    color: #fff;
+    background-color: #1e1e1e;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 80%;
+    margin-left: auto;
+}
+
+.ai-message {
+    text-align: left;
+    color: #1e1e1e;
+    background-color: #e9ecef;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 80%;
+    margin-right: auto;
+}
+
+/* --- Footer --- */
+.custom-navbar a, footer a {
+    color: #f2f2f2;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.custom-navbar a:hover, footer a:hover {
+    text-decoration: underline;
+}
+
+.responsive-footer {
+    background-color: #1e1e1e !important;
+    padding: 10px 0;
+}
+
+.responsive-footer i, .responsive-footer .footer-icon-svg {
+    color: #f2f2f2;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    height: 1.5rem;
+}
+
+.responsive-footer .footer-icon-svg {
+    fill: #f2f2f2;
+    width: 1.5rem;
+}
+
+.responsive-footer a {
+    text-decoration: none;
+    color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.responsive-footer small {
+    color: #f2f2f2;
+    font-size: 0.75rem;
+}
+
+/* --- Estilos Específicos de Páginas --- */
+
+/* Home */
+.row > .col-lg-3 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Mapa de Pilotos */
+.map-container {
+    position: relative;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.location-icon {
+    position: absolute;
+    font-size: 2rem;
+    color: #bf0010;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.location-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Registro Piloto */
+.registro-piloto .card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Términos y Condiciones */
+.terminos-y-condiciones .card {
+    background-color: #f2f2f2 !important;
+    border: none;
+}
+.terminos-y-condiciones .card-link {
+    color: #1e1e1e;
+}
+
+/* --- Responsive Navbar Adjustments --- */
+ @media (max-width: 991.98px) {
+    .custom-navbar .container-fluid {
+        justify-content: center; /* Center the brand/logo */
+        position: relative; /* Needed for absolute positioning of the toggler */
+    }
+
+    .navbar-toggler {
+        position: absolute;
+        right: 1rem; /* Position toggler to the far right */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .navbar-collapse {
+        margin-top: 1rem; /* Add some space above the collapsed menu */
+    }
+
+    .navbar-nav .nav-item {
+        text-align: center; /* Center the text within each nav item */
+        width: 100%; /* Ensure items take full width */
+    }
+}
+
+/* --- Mobile-Specific Adjustments for Phones --- */
+ @media (max-width: 767.98px) {
+    /* Hide video background on mobile */
+    .video-background,
+    .video-overlay {
+        display: none;
+    }
+
+    /* Adjust body background for mobile when video is hidden */
+    body {
+        background: #1e1e1e;
+    }
+
+    /* Reduce mobile logo size */
+    .navbar-brand.d-lg-none img {
+        max-height: 50px;
+        width: auto;
+    }
+
+    /* Center content text and elements inside cards on mobile */
+    .main-content-container {
+        text-align: center;
+    }
+    .main-content-container .text-start {
+        text-align: center !important;
+    }
+    .main-content-container .justify-content-start {
+        justify-content: center !important;
+    }
+    .main-content-container h6 {
+        text-align: center !important;
+    }
+}
+
+/* --- Bootstrap-select width fix --- */
+.bootstrap-select {
+    width: 100% !important;
+}
+
+/* --- Términos y Condiciones --- */
+.terminos-page .card {
+    background-color: #f2f2f2 !important;
+    border: none;
+    height: 100%; /* Make cards in a row the same height */
+}
+
+.terminos-page .card-link {
+    color: #32a470;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.terminos-page .card-link:hover {
+    text-decoration: underline;
+}
+
+.terminos-page .card-title,
+.terminos-page .card-text {
+    color: #1e1e1e;
+}
+
+.terminos-page #content-display {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.terminos-page #content-display h3,
+.terminos-page #content-display p {
+    color: #1e1e1e;
+}

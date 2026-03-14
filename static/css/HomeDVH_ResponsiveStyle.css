@@ -1,0 +1,622 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+.test-version-banner {
+    position: fixed;
+    top: 15px;
+    left: -40px;
+    width: 150px;
+    background-color: white;
+    color: black;
+    padding: 5px 0;
+    transform: rotate(-45deg);
+    z-index: 1100;
+    font-size: 0.9rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border: 1px solid black;
+}
+
+.home-wrapper {
+    background-color: #f2f2f2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-wrapper main {
+    flex-grow: 1;
+}
+
+/* --- Variables CSS Globales para Personalizar --- */
+:root {
+    /* Colores y Fuentes del Navbar */
+    --color-navbar-fondo: #1e1e1e;
+    --color-link-normal: #f2f2f2;
+    --color-link-hover: #eee;
+    --color-texto-usuario: #f2f2f2;
+    --color-cerrar-sesion: #f2f2f2;
+    --color-cerrar-sesion-hover: #eee;
+    --fuente-principal: 'Inter', sans-serif;
+    --fuente-links: 'Inter', sans-serif;
+
+    /* Variables para la Pantalla Dividida (Sección Principal) */
+    --color-left-half-bg: #f2f2f2; 
+    --color-right-half-bg: #f2f2f2; 
+    --color-heading-left-new: #1e1e1e; 
+    --color-subheading-left: #1e1e1e; 
+    --fuente-heading-left: 'Inter', sans-serif;
+    --color-heading-right: #1e1e1e; 
+    --fuente-heading-right: 'Inter', sans-serif;
+    --color-image-title: #1e1e1e; 
+    --color-image-link: #1e1e1e; 
+    --color-image-link-hover: #333;
+    --color-image-separator: #1e1e1e; 
+    --color-text-under-link: #1e1e1e; 
+    --color-intermediate-subtitle: #1e1e1e; 
+
+
+    /* Variables para la Sala de Preguntas/Respuestas (Q&A Box) */
+    --qa-bg: #ffffff;
+    --qa-border: #e0e0e0;
+    --qa-header-bg: #eee;
+    --qa-header-text: #ffffff;
+    --qa-response-bg: #f8f8f8; 
+    --qa-response-text: #333; 
+    --qa-input-bg: #f8f8f8;
+    --qa-input-border: #ddd;
+    --qa-button-bg: #1e1e1e;
+    --qa-button-icon: #ffffff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- Estilos Generales del Navbar --- */
+.mi-navbar {
+    background-color: #1e1e1e;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.mi-logo {
+    height: 40px;
+    width: auto;
+}
+
+/* Estilos generales para todos los enlaces de navegación */
+.mi-link,
+.mi-link-cerrar-sesion {
+    color: #f2f2f2 !important;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.05rem;
+    font-weight: normal;
+    padding: 0.5rem 0.8rem;
+    transition: color 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+/* Estado hover para los enlaces de navegación */
+.mi-link:hover {
+    color: #eee !important;
+}
+
+/* Estilos específicos para el texto "Hola alejandro@gmail.com" */
+.mi-usuario-sesion {
+    color: #f2f2f2 !important;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 1.1rem;
+    margin-right: 15px;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+}
+
+/* Estilos específicos para el enlace "Cerrar sesión" */
+.mi-link-cerrar-sesion {
+    color: #eee !important;
+    font-weight: normal;
+}
+
+/* Estado hover para el enlace "Cerrar sesión" */
+.mi-link-cerrar-sesion:hover {
+    color: #eee !important;
+}
+
+/* Estilos para el botón del "toggler" (menú hamburguesa en móviles) */
+.navbar-toggler {
+    border-color: #333 !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* --- Estilos para la sección principal con split-background --- */
+.split-background {
+    display: flex;
+    min-height: calc(100vh - (100px + 200px)); 
+}
+
+.left-half { /* Este es el lado de la sala de preguntas (que ahora están a la derecha) */
+    background-color: #f2f2f2;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    min-height: 50vh; 
+}
+
+.right-half { /* Este es el lado de las fotos (que ahora están a la izquierda) */
+    background-color: #f2f2f2;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    min-height: 50vh; 
+}
+
+/* Estilos para el NUEVO H3 del lado de la sala de preguntas */
+.custom-heading-left-new {
+    color: #1e1e1e;
+    font-family: var(--fuente-heading-left);
+    font-size: 2.2rem; 
+    font-weight: bold;
+    text-align: left; 
+    justify-content: left;
+    width: 100%;
+    max-width: 500px; 
+    padding-left: 5%; 
+    box-sizing: border-box; 
+    margin-top: 4.5rem !important; /* Alineación vertical con el título izquierdo */
+}
+
+/* Estilos para el NUEVO H4 del lado de la sala de preguntas */
+.left-half h4 {
+    color: #1e1e1e;
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem; 
+    line-height: 1.4;
+    padding-left: 10px; 
+    justify-content: left;
+}
+
+
+/* Estilos para el H1 del lado de las sesiones */
+.custom-h1-right {
+   color: var(--color-heading-right);
+    font-family: var(--fuente-heading-right);
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: left; 
+    width: 100%; 
+    max-width: 500px; 
+    padding-left: 5%; 
+    box-sizing: border-box; 
+    justify-content: left;
+    align-items: var(--color-left-half-bg);
+}
+
+/* Estilos de las imágenes en el lado de las sesiones */
+.custom-image {
+    max-width: 250px; 
+    height: auto; 
+    border: 3px solid #ddd; 
+    transition: transform 0.3s ease; 
+}
+
+.custom-image:hover {
+    transform: scale(1.03);
+}
+
+/* --- ESTILOS para h3 (títulos superiores), h4 (títulos intermedios), y links/textos (subtítulos inferiores de las sesiones) --- */
+
+/* h3 para títulos superiores de las sesiones */
+.right-half h3 {
+    font-size: 1.5rem;
+    color: #1e1e1e;
+    margin-top: 0;
+    margin-bottom: 0.5rem; 
+    line-height: 1.2;
+    justify-content: left;
+    min-height: 54px; /* Altura mínima para igualar los títulos */
+}
+
+/* h4 para títulos intermedios de productos */
+.right-half h4 { 
+    font-size: 1.1rem; 
+    color: #1e1e1e;
+    margin-top: 0.25rem; 
+    margin-bottom: 0.5rem; 
+    line-height: 1.2;
+    justify-content: left;
+}
+
+
+/* Estilos para los links que ahora son los subtítulos inferiores de productos */
+.custom-link-image {
+    color: #1e1e1e;
+    font-size: 1.1rem; 
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.25rem 0; 
+    transition: color 0.3s ease;
+    display: block; 
+    line-height: 1.2;
+}
+
+.custom-link-image:hover {
+    color: var(--color-image-link-hover);
+    text-decoration: underline;
+}
+
+/* Estilos para el texto descriptivo debajo de los links/subtítulos de productos */
+.custom-text-under-link {
+    color: #1e1e1e;
+    font-size: 0.9rem;
+    max-width: 250px; 
+    margin-top: 0.25rem; 
+    margin-bottom: 0;
+    line-height: 1.4;
+    justify-content: left;
+}
+
+/* Estilos para la línea separadora debajo de las imágenes */
+.image-separator {
+    width: 100%; 
+    max-width: 250px; 
+    border: 0; 
+    height: 2px; 
+    background-color: var(--color-image-separator); 
+    margin-top: 0.5rem; 
+    margin-bottom: 1.5rem; 
+}
+
+.card-header-custom {
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* --- Estilos para la Sala de Preguntas/Respuestas --- */
+.q-a-container {
+    width: 90%;
+    max-width: 500px;
+    min-height: 250px; 
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.q-a-header {
+    background-color: #eee;
+    color: #1e1e1e;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.q-a-header i {
+    font-size: 1.5rem;
+}
+
+.q-a-response {
+    flex-grow: 1; 
+    padding: 1rem;
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    background-color: #ffffff;
+    color: #1e1e1e;
+    font-size: 1rem;
+    line-height: 1.5;
+    overflow-y: auto; 
+}
+
+.q-a-response p {
+    margin-bottom: 0;
+}
+
+
+.q-a-input {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid var(--qa-border);
+    background-color: var(--qa-input-bg);
+}
+
+.q-a-input input {
+    flex-grow: 1;
+    border: 1px solid var(--qa-input-border);
+    border-radius: 20px;
+    padding: 0.75rem 1rem;
+    margin-right: 0.5rem;
+    outline: none;
+}
+
+.q-a-input button {
+    background-color: var(--qa-button-bg);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--qa-button-icon);
+    font-size: 1.2rem;
+    transition: background-color 0.2s ease;
+}
+
+.q-a-input button:hover {
+    background-color: #333;
+}
+
+/* --- Estilos Generales del Footer --- */
+.mi-footer {
+    background-color: #1e1e1e;
+    color: #f2f2f2;
+    padding: 3rem 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Flexbox para los items del footer */
+.footer-col-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+}
+
+/* Espaciadores vacíos para desktop */
+.footer-spacer-col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    padding: 0;
+}
+
+/* Estilos de íconos */
+.footer-icon {
+    font-size: 2rem;
+    color: var(--color-footer-icon);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-icon:hover {
+    color: var(--color-footer-link-hover);
+}
+
+/* Estilos de links de texto en el footer */
+.footer-link-bottom,
+.footer-text.footer-link-hover {
+    color: var(--color-footer-link);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-link-bottom:hover,
+.footer-text.footer-link-hover:hover {
+    color: var(--color-footer-link-hover);
+    text-decoration: underline;
+}
+
+/* Estilos para los logos clickeables */
+.footer-logo-link {
+    display: inline-block;
+    line-height: 0;
+}
+.footer-small-logo {
+    max-width: 160px;
+    height: auto;
+}
+
+.footer-corfo-logo {
+    max-width: 140px;
+}
+
+/* Línea divisoria y copyright */
+.footer-divider {
+    border-top: 1px solid var(--color-footer-divider);
+}
+
+.footer-copyright {
+    font-size: 0.85rem;
+    color: var(--color-footer-link);
+}
+
+/* --- Media queries para Responsividad General --- */
+@media (max-width: 991.98px) { /* Tablet y Móviles para Navbar */
+    .mi-navbar .navbar-nav {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100%;
+        margin-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 10px;
+    }
+    .mi-navbar .container-fluid {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    .mi-navbar .navbar-brand {
+        margin-right: 0;
+    }
+    .mi-navbar .navbar-toggler {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .mi-navbar .navbar-nav .nav-item {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .mi-navbar .navbar-nav .nav-item:last-child {
+        margin-bottom: 0;
+    }
+    .mi-navbar .navbar-brand {
+        margin-bottom: 10px;
+    }
+    .mi-navbar .navbar-nav .ms-auto {
+        margin-left: 0 !important;
+    }
+    .mi-usuario-sesion {
+        margin-right: 0 !important;
+    }
+
+    /* Ajuste para los títulos, links y textos de imagen en móvil (centrarlos) */
+    .right-half .text-start,
+    .right-half .text-end {
+        text-align: center !important; 
+    }
+
+    /* Alineación del h4 del chatbot en móviles */
+    .left-half .text-start {
+        text-align: center !important; 
+        justify-content: left;
+    }
+}
+
+@media (min-width: 992px) { /* Desktop para Navbar */
+    .mi-navbar .navbar-nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .mi-navbar .navbar-nav .nav-item {
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+    .mi-navbar .navbar-brand {
+        margin-right: 15px;
+    }
+}
+
+
+@media (max-width: 767.98px) { /* Móviles para Contenido Principal y Footer */
+    /* Ajustes para la sección principal (pantalla dividida) en móviles */
+    .split-background {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .left-half, .right-half {
+        min-height: auto;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        align-items: center !important;
+    }
+   
+    .custom-heading-left-new,
+    .custom-h1-right {
+        text-align: center !important; /* Centrado en móviles */
+        padding-left: 0 !important; 
+        justify-content: center;
+        max-width: none;
+        font-size: 1.8rem; /* Tamaño de fuente reducido para móviles */
+    }
+
+
+    .left-half h4 { 
+        text-align: center !important;
+        padding-left: 0 !important;
+    }
+    .q-a-container { 
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .custom-text-under-link { 
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Ajustes para el footer en móviles */
+    .mi-footer .row {
+        justify-content: center;
+    }
+    .footer-spacer-col {
+        display: none !important; 
+    }
+    .footer-col-item {
+        margin-bottom: 1.5rem;
+        flex-basis: auto;
+        width: 100%; /* Apilar verticalmente en móviles */
+    }
+    .footer-col-item:nth-child(2),
+    .footer-col-item:nth-child(10),
+    .footer-col-item:nth-child(12) {
+        width: 100%;
+    }
+
+     .right-half .text-start h3 {
+        text-align: center !important; /* Fuerza la alineación a la izquierda para este h3 */
+        margin-left: 0 !important; /* Asegura que no tenga margen automático */
+        margin-right: auto !important; /* Asegura que no tenga margen automático */
+    }
+
+
+      .right-half .text-start h4 {
+        text-align: center !important; /* Fuerza la alineación a la izquierda para este h4 */
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+
+
+}
+
+@media (min-width: 768px) { /* Tablet y Desktop para Contenido Principal y Footer */
+    /* Ajustes para la sección principal (pantalla dividida) en tablet y desktop */
+    .left-half {
+        align-items: center !important;
+        justify-content: left !important;
+    }
+    .custom-heading-left-new { 
+        text-align: center !important;
+    }
+    .left-half h4 { 
+        text-align: left !important; 
+        justify-content: left;
+    }
+
+    /* Ajustes para el footer en tablet y desktop */
+    .mi-footer .row {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .footer-col-item {
+        margin-bottom: 0;
+        flex-grow: 0;
+        flex-shrink: 0;
+        min-width: fit-content;
+        padding: 0 10px;
+    }
+    .footer-spacer-col {
+        display: block !important;
+        flex-basis: calc(100% / 13);
+        flex-grow: 1;
+    }
+}
+
+@media (min-width: 1200px) { /* Desktop Grande */
+    .container-fluid {
+        max-width: 1600px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .mi-logo {
+        height: auto; /* Smaller logo for mobile */
+    }
+}

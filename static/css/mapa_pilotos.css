@@ -1,0 +1,158 @@
+body {
+    /* Ruta a tu imagen de fondo */
+    background-image: url('dvh_MapaPilotos_images/Gemini_Generated_Image_te2ti3te2ti3te2t.png');
+
+    background-size: cover;          
+    background-position: center;    
+    background-attachment: fixed;    
+    background-repeat: no-repeat;    
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1; 
+}
+/* * Estilos para el Navbar*/
+
+.custom-navbar {
+    background-color: #1e1e1e;
+}
+
+.nav-link {
+font-family: Arial, Helvetica, sans-serif;
+color: #f2f2f2;
+}
+
+.nav-link:hover{
+font-family: Arial, Helvetica, sans-serif;
+color: #f2f2f2;
+text-decoration: underline;
+}
+
+
+/* Estilo para el botón hamburguesa */
+.navbar-toggler {
+    border-color: #f2f2f2; 
+}
+
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler-icon {
+    color: #f2f2f2;
+}
+
+
+
+.map-container {
+    position: relative;
+}
+
+#map {
+    height: 400px; 
+    width: 100%;
+}
+
+.location-icon {
+    position: absolute;
+    font-size: 2rem;
+    color: #bf0010;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.location-icon:hover {
+    transform: scale(1.2);
+}
+
+
+
+.btn-primary {
+  background-color: #1e1e1e; 
+  border-color: none;
+  color: #f2f2f2; 
+  padding: 10px 10px; 
+  border-radius: 5px; 
+  font-size: 16px; 
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all 0.3s ease; 
+}
+
+.btn-primary:hover {
+  background-color: #f2f2f2; 
+  border-color: #1e1e1e;
+  color: #1e1e1e; 
+  padding: 10px 10px; 
+  border-radius: 5px; 
+  font-size: 16px; 
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all 0.3s ease; 
+}
+
+
+
+
+/* Estilos para el Footer */
+
+/* Estilos para el footer de pantalla extendida */
+.custom-navbar a {
+    color: #f2f2f2; 
+    font-size: 16px;
+    text-decoration: none; 
+}
+
+.custom-navbar a:hover {
+    color: #f2f2f2; 
+    text-decoration: underline;
+}
+
+/* Estilos para el footer responsivo */
+.responsive-footer {
+    background-color: #1e1e1e !important;
+    padding: 10px 0;
+}
+
+.responsive-footer i, .responsive-footer .footer-icon-svg {
+    color: #f2f2f2;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    height: 1.5rem;
+}
+
+.responsive-footer .footer-icon-svg {
+    fill: #f2f2f2;
+    width: 1.5rem;
+}
+
+/* Estilo del footer responsivo */
+.responsive-footer a {
+    text-decoration: none; 
+    color: #f2f2f2; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* ... el resto de tus estilos ... */
+
+.responsive-footer small {
+    color: #f2f2f2;
+    font-size: 0.75rem;
+}
+
+.responsive-footer a:hover {
+    color: #f2f2f2 !important;
+}
+
+.responsive-footer a:hover i, .responsive-footer a:hover .footer-icon-svg {
+    color: #f2f2f2!important;
+    fill: #f2f2f2 !important;
+}
